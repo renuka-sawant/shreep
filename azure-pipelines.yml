@@ -26,7 +26,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/parent'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/main.tf'
     backendServiceArm: 'pipelineserco'
     backendAzureRmStorageAccountName: 'rg11stor'
     backendAzureRmContainerName: 'rg11container'
