@@ -31,3 +31,8 @@ steps:
     backendAzureRmStorageAccountName: 'rg11stor'
     backendAzureRmContainerName: 'rg11container'
     backendAzureRmKey: 'terraform1.tfstate'
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'validate'
