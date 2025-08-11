@@ -21,3 +21,13 @@ steps:
 - task: TerraformInstaller@1
   inputs:
     terraformVersion: 'latest'
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/parent'
+    backendServiceArm: 'pipelineserco'
+    backendAzureRmStorageAccountName: 'rg11stor'
+    backendAzureRmContainerName: 'rg11container'
+    backendAzureRmKey: 'terraform1.tfstate'
