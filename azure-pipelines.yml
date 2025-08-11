@@ -19,10 +19,12 @@ steps:
   displayName: 'Run a multi-line script'
 
 - task: TerraformInstaller@1
+  displayName: 'installer'
   inputs:
    terraformVersion: '1.5.6'
 
 - task: TerraformTask@5
+  displayName: 'init'
   inputs:
     provider: 'azurerm'
     command: 'init'
@@ -33,7 +35,14 @@ steps:
     backendAzureRmKey: 'terraform1.tfstate'
 
 - task: TerraformTask@5
+  displayName: 'plan'
   inputs:
     provider: 'azurerm'
     command: 'plan'
+    environmentServiceNameAzureRM: 'pipelineserco'
+- task: TerraformTask@5
+  displayName: 'Apply'
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
     environmentServiceNameAzureRM: 'pipelineserco'
