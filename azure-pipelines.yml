@@ -31,7 +31,6 @@ steps:
     command: 'plan'
     environmentServiceNameAzureRM: 'pipelineserco'
 - task: TerraformTask@5
-  displayName: 'Apply'
   inputs:
     provider: 'azurerm'
     command: 'apply'
