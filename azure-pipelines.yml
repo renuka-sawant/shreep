@@ -32,8 +32,13 @@ steps:
     environmentServiceNameAzureRM: 'pipelineserco'
 
 - task: TerraformTask@5
+  displayName: 'Terraform Apply'
   inputs:
     provider: 'azurerm'
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/'
     environmentServiceNameAzureRM: 'pipelineserco'
+    ensureBackend: true
+    allowTelemetryCollection: false
+    runAzLogin: true  # Ensures login before apply
+    args: '-auto-approve'  # Optional: auto-approves apply without prompt
