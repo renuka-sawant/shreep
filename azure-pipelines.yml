@@ -25,13 +25,8 @@ steps:
     backendAzureRmKey: 'terraform1.tfstate'
 
 - task: TerraformTask@5
-  displayName: 'plan'
   inputs:
     provider: 'azurerm'
     command: 'plan'
-    environmentServiceNameAzureRM: 'pipelineserco'
-- task: TerraformTask@5
-  inputs:
-    provider: 'azurerm'
-    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/'
     environmentServiceNameAzureRM: 'pipelineserco'
