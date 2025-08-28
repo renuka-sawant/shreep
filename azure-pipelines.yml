@@ -10,13 +10,6 @@ pool:
   Default
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
 
 - task: TerraformInstaller@1
   displayName: 'installer'
@@ -27,7 +20,6 @@ steps:
     provider: 'azurerm'
     command: 'init'
     backendServiceArm: 'pipelineserco'
-    backendAzureRmResourceGroupName: '13aug25'
     backendAzureRmStorageAccountName: 'rg11stor'
     backendAzureRmContainerName: 'rg11container'
     backendAzureRmKey: 'terraform1.tfstate'
